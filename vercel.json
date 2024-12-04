@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/server.js"
+    }
+  ],
+  "build": {
+    "env": {
+      "NODE_ENV": "production",
+      "NPM_FORCE": "true"
+    }
+  }
+}

@@ -1,16 +1,22 @@
 {
   "name": "radar-chart-api",
   "version": "1.0.0",
+  "description": "API para geração de gráficos de radar utilizando Express e Chart.js",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon server.js"
+    "start": "node src/server.js",
+    "build": "echo \"No build step required\"",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "API",
+    "radar-chart",
+    "chart.js",
+    "express"
+  ],
+  "author": "Gustavo Garabetti",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "canvas": "^2.11.2",
     "chart.js": "^3.9.1",
