@@ -15,6 +15,9 @@
     "chart.js",
     "express"
   ],
+  "engines": {
+    "node": "18.x"
+  },
   "author": "Gustavo Garabetti",
   "license": "ISC",
   "dependencies": {
