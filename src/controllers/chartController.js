@@ -10,10 +10,8 @@ exports.generateChart = async (req, res) => {
   try {
     const chartImg = await generateRadarBar(results);
     res.set("Content-Type", "image/jpg");
-    console.log(chartImg);
     res.sendFile(chartImg);
   } catch (error) {
-    console.log("entrei aqui");
     res
       .status(500)
       .json({ error: "Error generating chart", details: error.message });

@@ -11,7 +11,7 @@ exports.generateRadarBar = async (months) => {
 
     const buffer = await renderChartToBuffer(config);
 
-    const imagePath = path.join(__dirname, "../../public/teste.jpg");
+    const imagePath = path.join(__dirname, "../../public/img.jpg");
 
     fs.writeFileSync(imagePath, buffer);
     console.log("Imagem gerada com sucesso em: ", imagePath);
