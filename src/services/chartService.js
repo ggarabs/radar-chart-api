@@ -14,9 +14,12 @@ exports.generateRadarBar = async (months) => {
     const imagePath = path.join(__dirname, "../../public/img.jpg");
 
     fs.writeFileSync(imagePath, buffer);
+
+    const base64Img = fs.readFileSync(imagePath, "base64");
+
     console.log("Imagem gerada com sucesso em: ", imagePath);
 
-    return imagePath;
+    return base64Img;
   } catch (error) {
     console.error("Erro ao gerar o gráfico: ", error);
     throw error;

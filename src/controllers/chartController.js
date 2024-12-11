@@ -9,8 +9,7 @@ exports.generateChart = async (req, res) => {
 
   try {
     const chartImg = await generateRadarBar(results);
-    res.set("Content-Type", "image/jpg");
-    res.sendFile(chartImg);
+    res.json({ image: chartImg });
   } catch (error) {
     res
       .status(500)
