@@ -31,11 +31,14 @@ exports.getRadarBarConfig = (dataset) => {
       responsive: true,
       scales: {
         r: {
+          min: 0,
+          max: 100,
           angleLines: {
             display: true,
             lineWidth: 6,
           },
           ticks: {
+            stepSize: 20,
             display: true,
             font: {
               size: 40,
