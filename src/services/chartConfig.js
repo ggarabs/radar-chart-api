@@ -1,10 +1,15 @@
+const Chart = require("chart.js");
+const ChartDataLabels = require("chartjs-plugin-datalabels");
+
 exports.getRadarBarConfig = (dataset) => {
+  Chart.register(ChartDataLabels);
+
   return {
     type: "radar",
     data: {
       labels: [
         "1-Governança e Sucessão",
-        "2-Resultados do Negócio",
+        "2-Resultados do Negócios",
         "3-Gente e Cultura",
         "4-Tático Finalístico",
         "5-Tático Suporte",
@@ -12,18 +17,11 @@ exports.getRadarBarConfig = (dataset) => {
       ],
       datasets: [
         {
-          label: "My First Dataset",
           data: dataset,
           fill: true,
-          backgroundColor: "rgba(97, 194, 255, 0.2)",
+          backgroundColor: "rgba(69, 177, 235, 0.5)",
           borderColor: "rgb(97, 194, 255)",
-          pointBackgroundColor: "rgb(97, 194, 255)",
-          pointBorderColor: "#fff",
-          pointHoverBackgroundColor: "#fff",
-          pointBorderWidth: 5,
-          pointHoverBorderColor: "rgb(255, 99, 132)",
-          pointRadius: 12,
-          borderWidth: 10,
+          borderWidth: 1,
         },
       ],
     },
@@ -43,13 +41,11 @@ exports.getRadarBarConfig = (dataset) => {
             font: {
               size: 40,
               family: "Arial",
-              weight: "bold",
             },
-            padding: 30,
           },
           pointLabels: {
             font: {
-              size: 40,
+              size: 60,
               family: "Arial",
               weight: "bold",
             },
@@ -64,16 +60,34 @@ exports.getRadarBarConfig = (dataset) => {
           borderWidth: 6,
         },
       },
+      layout: {
+        padding: {
+          top: 20,
+          right: 20,
+          bottom: 20,
+          left: 20,
+        },
+      },
       plugins: {
         legend: {
           display: false,
         },
+        datalabels: {
+          color: "#000",
+          font: {
+            size: 47,
+            weight: 600,
+          },
+          backgroundColor: "rgb(210, 210, 210)",
+          borderWidth: 4,
+          borderColor: "rgba(195, 195, 195, 1)",
+          borderRadius: 20,
+          padding: 18,
+          formatter: (value) => value,
+        },
         tooltip: {
           bodyFont: {
             size: 24,
-          },
-          titleFont: {
-            size: 28,
           },
         },
       },
