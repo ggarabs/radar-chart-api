@@ -2,7 +2,14 @@ exports.getRadarBarConfig = (dataset) => {
   return {
     type: "radar",
     data: {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      labels: [
+        "1-Governança e Sucessão",
+        "2-Resultados do Negócio",
+        "3-Gente e Cultura",
+        "4-Tático Finalístico",
+        "5-Tático Suporte",
+        "6-Operacional",
+      ],
       datasets: [
         {
           label: "My First Dataset",

@@ -3,9 +3,9 @@ const path = require("path");
 const { getRadarBarConfig } = require("./chartConfig");
 const { renderChartToBuffer } = require("./chartRenderer");
 
-exports.generateRadarBar = async (months) => {
+exports.generateRadarBar = async (params) => {
   try {
-    const dataset = Object.values(months);
+    const dataset = Object.values(params);
 
     const config = getRadarBarConfig(dataset);
 
