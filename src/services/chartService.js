@@ -12,13 +12,13 @@ exports.generateRadarBar = async (params) => {
 
     const buffer = await renderChartToBuffer(config);
 
-    const cuttedImg = await sharp(buffer)
+    const croppedImg = await sharp(buffer)
       .extract({ width: 2050, height: 1100, left: 50, top: 350 })
       .toBuffer();
 
     const imagePath = path.join(__dirname, "../../public/img.jpg");
 
-    fs.writeFileSync(imagePath, cuttedImg);
+    fs.writeFileSync(imagePath, croppedImg);
 
     const base64Img = fs.readFileSync(imagePath, "base64");
 
