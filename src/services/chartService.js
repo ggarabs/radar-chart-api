@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const sharp = require("sharp");
 const { getRadarBarConfig } = require("./chartConfig");
 const { renderChartToBuffer } = require("./chartRenderer");
 
@@ -11,9 +12,13 @@ exports.generateRadarBar = async (params) => {
 
     const buffer = await renderChartToBuffer(config);
 
+    const cuttedImg = await sharp(buffer)
+      .extract({ width: 2050, height: 1100, left: 50, top: 350 })
+      .toBuffer();
+
     const imagePath = path.join(__dirname, "../../public/img.jpg");
 
-    fs.writeFileSync(imagePath, buffer);
+    fs.writeFileSync(imagePath, cuttedImg);
 
     const base64Img = fs.readFileSync(imagePath, "base64");
 
