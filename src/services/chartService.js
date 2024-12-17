@@ -16,7 +16,7 @@ exports.generateRadarBar = async (params) => {
       .extract({ width: 2050, height: 1100, left: 50, top: 350 })
       .toBuffer();
 
-    const imagePath = path.join(__dirname, "../../public/img.jpg");
+    const imagePath = path.join(__dirname, "../../public/img.png");
 
     fs.writeFileSync(imagePath, croppedImg);
 
