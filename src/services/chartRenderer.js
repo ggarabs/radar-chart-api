@@ -4,7 +4,7 @@ exports.renderChartToBuffer = async (config) => {
   const chartJSNodeCanvas = new ChartJSNodeCanvas({
     width: 2200,
     height: 1800,
-    backgroundColour: "rgba(228, 228, 228, 1)",
+    backgroundColour: "rgba(249, 249, 248, 1)",
     devicePixelRatio: 6,
   });
 
