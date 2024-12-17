@@ -2,10 +2,9 @@ const Chart = require("chart.js");
 const ChartDataLabels = require("chartjs-plugin-datalabels");
 
 exports.getRadarBarConfig = (dataset) => {
-  Chart.register(ChartDataLabels);
-
   return {
     type: "radar",
+    plugins: [ChartDataLabels],
     data: {
       labels: [
         "1-Governança e Sucessão",
