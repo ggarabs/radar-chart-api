@@ -16,3 +16,7 @@ exports.generateChart = async (req, res) => {
       .json({ error: "Error generating chart", details: error.message });
   }
 };
+
+exports.getApiHealth = async (req, res) => {
+  return res.status(200).json({ state: "ACTIVE" });
+};

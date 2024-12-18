@@ -1,7 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const chartController = require('../controllers/chartController');
+const chartController = require("../controllers/chartController");
 
-router.post('/generate-chart', chartController.generateChart);
+router.get("/", chartController.getApiHealth);
+router.post("/generate-chart", chartController.generateChart);
 
 module.exports = router;
